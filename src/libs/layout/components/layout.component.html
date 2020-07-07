@@ -1,0 +1,21 @@
+<div class="layout-container">
+  <section #header class="header" [class.hide-header]="hideHeader" [class.fill-right]="hideRight" [class.fill-left]="hideLeft">
+    <ng-content select="[header]"></ng-content>
+  </section>
+
+  <section #left class="left" [class.hide-left]="hideLeft">
+    <ng-content select="[left]"></ng-content>
+  </section>
+
+  <section #right class="right" [class.hide-right]="hideRight">
+    <ng-content select="[right]"></ng-content>
+  </section>
+
+  <div class="scrollable" [class.fill-right]="hideRight" [class.fill-left]="hideLeft" [class.fill-top]="hideHeader" [class.fill-bottom]="hideFooter">
+    <ng-content select="[content]"></ng-content>
+  </div>
+
+  <section #footer class="footer" [class.hide-footer]="hideFooter" [class.fill-right]="hideRight" [class.fill-left]="hideLeft">
+    <ng-content select="[footer]"></ng-content>
+  </section>
+</div>

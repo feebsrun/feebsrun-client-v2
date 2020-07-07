@@ -1,0 +1,7 @@
+<div class="nav-bar-container">
+  <button class="feebs-btn icon"
+          *ngFor="let tile of tiles"
+          [routerLink]="tile.routerLink">
+    <svg-icon [name]="tile.icon"></svg-icon>
+  </button>
+</div>

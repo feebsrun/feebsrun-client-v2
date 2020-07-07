@@ -1,0 +1,51 @@
+@import 'variables';
+
+.feebs-btn {
+  &.icon {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+
+    svg-icon {
+      height: 30px;
+      width: 30px;
+
+      svg {
+        margin: 5px;
+      }
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.feebs-light {
+  .feebs-btn {
+    color: $gray-900;
+
+    &:hover {
+      background-color: rgba($gray-500, .3);
+    }
+
+    &:active {
+      background-color: rgba($gray-500, .5);
+    }
+  }
+}
+
+.feebs-dark {
+  .feebs-btn {
+    color: $gray-000;
+
+    &:hover {
+      background-color: rgba($gray-400, .3);
+    }
+
+    &:active {
+      background-color: rgba($gray-400, .5);
+    }
+  }
+}

@@ -1,0 +1,1 @@
+export * from './theme-root.directive';

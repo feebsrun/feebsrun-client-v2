@@ -1,0 +1,13 @@
+<h3 routerLink="/home">FeebsRun</h3>
+<span class="spacer"></span>
+<label for="darkTheme">Dark Theme</label>
+<input id="darkTheme"
+       type="checkbox"
+       [formControl]="darkTheme">
+<button (click)="authService.login()"
+        *ngIf="!authService.loggedIn">Log In</button>
+
+<span
+      *ngIf="authService.loggedIn && (authService.userProfile$ | async) as userProfile">{{ userProfile.name }}</span>
+<button (click)="authService.logout()"
+        *ngIf="authService.loggedIn">Log Out</button>

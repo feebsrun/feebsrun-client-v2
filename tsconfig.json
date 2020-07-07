@@ -3,10 +3,12 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
     "sourceMap": true,
     "declaration": false,
-    "downlevelIteration": true,
     "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "module": "esnext",
     "moduleResolution": "node",
     "importHelpers": true,
@@ -15,12 +17,28 @@
       "node_modules/@types"
     ],
     "lib": [
-      "es2018",
+      "es2017",
       "dom"
-    ]
-  },
-  "angularCompilerOptions": {
-    "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
+    ],
+    "paths": {
+      "@libs/layout": [
+        "src/libs/layout/index"
+      ],
+      "@libs/theme": [
+        "src/libs/theme/index"
+      ],
+      "@libs/icons": [
+        "src/libs/icons/index"
+      ],
+      "@libs/runs": [
+        "src/libs/runs/index"
+      ],
+      "@libs/food": [
+        "src/libs/food/index"
+      ],
+      "@libs/auth": [
+        "src/libs/auth/index"
+      ]
+    }
   }
 }

@@ -1,0 +1,139 @@
+@import 'variables';
+
+:host {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+.layout-container {
+  height: 100%;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: [left] fit-content(270px) [center] auto [right] fit-content(270px) [end];
+  grid-template-rows: [top] 50px [main] auto [footer] 50px [bottom];
+
+  .header {
+    grid-column-start: center;
+    grid-column-end: right;
+    grid-row-start: top;
+    grid-row-end: main;
+    display: block;
+    border-bottom: 1px solid;
+
+    &.hide-header {
+      display: none;
+    }
+
+    &.fill-right {
+      grid-column-end: end;
+    }
+
+    &.fill-left {
+      grid-column-start: left;
+    }
+  }
+
+  .left {
+    grid-column-start: left;
+    grid-column-end: center;
+    grid-row-start: top;
+    grid-row-end: bottom;
+    display: block;
+    border-right: 1px solid;
+
+    &.hide-left {
+      display: none;
+    }
+  }
+
+  .right {
+    grid-column-start: right;
+    grid-column-end: span 1;
+    grid-row-start: top;
+    grid-row-end: bottom;
+    display: block;
+    border-left: 1px solid;
+
+    &.hide-right {
+      display: none;
+    }
+  }
+
+  .scrollable {
+    overflow: auto;
+    grid-column-start: center;
+    grid-column-end: right;
+    grid-row-start: main;
+    grid-row-end: footer;
+
+    &.fill-right {
+      grid-column-end: end;
+    }
+
+    &.fill-left {
+      grid-column-start: left;
+    }
+
+    &.fill-top {
+      grid-row-start: top;
+    }
+
+    &.fill-bottom {
+      grid-row-end: bottom;
+    }
+  }
+
+  .footer {
+    grid-column-start: center;
+    grid-column-end: right;
+    grid-row-start: footer;
+    grid-row-end: bottom;
+    display: block;
+
+    &.hide-footer {
+      display: none;
+    }
+
+    &.fill-right {
+      grid-column-end: end;
+    }
+
+    &.fill-left {
+      grid-column-start: left;
+    }
+  }
+
+  .header,
+  .footer {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 10px;
+  }
+}
+
+:host-context(.feebs-light) {
+  .layout-container {
+    background-color: $white;
+
+    .right,
+    .left,
+    .header {
+      border-color: $gray-100;
+    }
+  }
+}
+
+:host-context(.feebs-dark) {
+  .layout-container {
+    background-color: $gray-900;
+    color: $white;
+
+    .right,
+    .left,
+    .header {
+      border-color: $gray-800;
+    }
+  }
+}
